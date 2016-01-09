@@ -1,0 +1,2 @@
+class XsAndOs(object):
+	pass
