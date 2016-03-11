@@ -40,25 +40,24 @@ class XsAndOsSetUp(object):
 	        user_input = user_input.split(" ")
 	        collum = "null"
 	        row = "null"
-	        if len(user_input) != 2:
-	            print "Use only one space in your answer"
-	        elif user_input[0] == "middle" or user_input[1] == "middle":
-	                collum = 1
-	                row = 1
-	        if user_input[0] == "top" or user_input[1] == "top":
-	            collum = 0
-	        elif user_input[0] == "bottom" or user_input[1] == "bottom":
-	            collum = 2
-	        if user_input[0] == "left" or user_input[1] == "left":
-	            row = 0
-	        elif user_input[0] == "right" or user_input[1] == "right":
-	            row = 2
-	        if type(collum) == int or type(row) == int:
-	            if board[collum][row] == "E":
-	                return [collum, row]
-	                break
-	            else:
-	                print "incorrect placement"
+	        if len(user_input) == 2:
+		        if user_input[0] == "middle" or user_input[1] == "middle":
+		                collum = 1
+		                row = 1
+		        if user_input[0] == "top" or user_input[1] == "top":
+		            collum = 0
+		        elif user_input[0] == "bottom" or user_input[1] == "bottom":
+		            collum = 2
+		        if user_input[0] == "left" or user_input[1] == "left":
+		            row = 0
+		        elif user_input[0] == "right" or user_input[1] == "right":
+		            row = 2
+		        if type(collum) == int or type(row) == int:
+		            if board[collum][row] == "E":
+		                return [collum, row]
+		                break
+            else:
+                print "incorrect placement"
 	def board_full(self, board):
 	    for i in board:
 		for j in i:
