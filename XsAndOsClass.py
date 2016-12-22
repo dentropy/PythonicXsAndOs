@@ -122,6 +122,6 @@ board = PlayGame.draw_out_board()
 print board
 PlayGame.print_out_board(board)
 print "use the words top, bottom, left, right, and middle to place you piece"
-raw_input("choose who gets to go first then press enter")
+raw_input("choose who is X and who is O and press enter: ")
 firstPlayer = PlayGame.decide_who_goes_first()
 PlayGame.cycle_through_turns(board, firstPlayer)

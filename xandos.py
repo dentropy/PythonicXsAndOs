@@ -1,3 +1,4 @@
+#FOR FUTURE REFERENCE USE COMMENTS, lesson learned
 #the goal here is to use classes for the game so people can play multiple games
 #when I make them
 def draw_out_board():
@@ -112,7 +113,7 @@ def play_game():
     board = draw_out_board()
     print_out_board(board)
     print "use the words top, bottom, left, right, and middle to place you piece"
-    raw_input("choose who gets to go first then press enter")
+    raw_input("choose who gets to go first then press enter: ")
     firstPlayer = decide_who_goes_first()
     cycle_through_turns(board, firstPlayer)
 play_game()
