@@ -62,5 +62,3 @@ class UserInput(GameEngine):
         print("Testing GameEngine")
         self.game_setup()
         self.cycle_through_turns()
-#game = UserInput()
-#game.test_UserInput()

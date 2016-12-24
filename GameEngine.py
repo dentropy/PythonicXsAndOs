@@ -7,12 +7,6 @@ class GameEngine(object):
     def print_board (self):
         for i in self.board:
             print(i)
-    def test_Board(self):
-        print("Testing Board")
-        print(self.board)
-        print(self.turn)
-        print(self.state)
-        self.print_board()
     def decide_who_goes_first(self):
         import random
         if random.randrange(2) == 0:
@@ -61,15 +55,6 @@ class GameEngine(object):
             return("GAME OVER")#should I return False
         self.check_cats()
         self.check_winner()
-    def test_GameEngine(self):
-        print("Testing GameEngine")
-        print(self.board)
-        print(self.turn)
-        print(self.state)
-        self.print_board()
-        print("self.turn = " + self.turn)
-        self.decide_who_goes_first()
-        print("self.turn = " + self.turn)
 #game = GameEngine()
 #game.test_Board()
 #game.test_GameEngine()
