@@ -34,12 +34,14 @@ def player_turn(board, player):
     return board
 def get_user_input(board):
     while True:
-        user_input =input("Where do you want to go:")
-        while (user_input == ""):
+        test_user_input = False
+        while (test_user_input == False):
             print("Give a command dude")
             user_input =input("Where do you want to go:")
-        user_input = user_input.lower()
-        user_input = user_input.split(" ")
+            user_input = user_input.lower()
+            user_input = user_input.split(" ")
+            if(len(user_input) == 2):
+                test_user_input = True
         collum = "null"
         row = "null"
         if len(user_input) != 2:
