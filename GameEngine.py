@@ -1,5 +1,18 @@
-from Board import Board
-class GameEngine(Board):
+class GameEngine(object):
+    def __init__(self):
+        self.board = [['E', 'E', 'E'], ['E', 'E', 'E'], ['E', 'E', 'E']]
+        #self.board = [['O', 'X', 'X'],['X', 'O', 'O'],['X', 'O', 'E']]#test cats game
+        self.turn = "unknown"
+        self.state = "unknown"
+    def print_board (self):
+        for i in self.board:
+            print(i)
+    def test_Board(self):
+        print("Testing Board")
+        print(self.board)
+        print(self.turn)
+        print(self.state)
+        self.print_board()
     def decide_who_goes_first(self):
         import random
         if random.randrange(2) == 0:
@@ -31,7 +44,8 @@ class GameEngine(Board):
         count = 0
         for j in range(3):
             for k in range(3):
-                count += 1
+                if self.board[j][k] == "E":
+                    count += 1
         if (count == 0):
             self.state = "cats"
     def do_turn(self, yPos, xPos):#remember down then accrsoss
@@ -57,4 +71,5 @@ class GameEngine(Board):
         self.decide_who_goes_first()
         print("self.turn = " + self.turn)
 #game = GameEngine()
+#game.test_Board()
 #game.test_GameEngine()

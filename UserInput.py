@@ -60,11 +60,7 @@ class UserInput(GameEngine):
             print(self.state)
     def test_UserInput(self):
         print("Testing GameEngine")
-        #print(self.board)
-        #print(self.turn)
-        #self.print_board()
         self.game_setup()
-        #print(self.get_user_input())
         self.cycle_through_turns()
 #game = UserInput()
 #game.test_UserInput()
