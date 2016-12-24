@@ -6,34 +6,24 @@ The game works today and you can play it by cloning this code
 
 To run the game run the code bellow
 
-\t\t    python Play.py
+python Play.py
 
 
 Next Steps:
 
-1. Tests Tests Tests
-  more strings
-  extra spaces
-  only spaces
-  bad spellings
-  one word with a space
-  cats
-  win
+1. Put more comments in
 
-2. Put more comments in
+2. Store each placement for the ability to undo a placement
 
-1. Store each placement for the ability to undo a placement
+3. export saved games using JSON
 
+4. replay saved games
 
-2. export saved games using JSON
+5. CPU Mode aka neural network
 
-3. replay saved games
+6. Use Graphics library and render this using images
 
-4. CPU Mode aka neural network
-
-5. Use Graphics library and render this using images
-
-6. Have multiplayer over a network with lobbies
+7. Have multiplayer over a network with lobbies
 
 
 How the placement works

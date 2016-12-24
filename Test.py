@@ -1,5 +1,6 @@
 from UserInput import UserInput
 class Test(UserInput):
+    #self.board = [['O', 'X', 'X'],['X', 'O', 'O'],['X', 'O', 'E']]#test cats game
     def test_Board(self):
         print("Testing Board")
         print(self.board)
