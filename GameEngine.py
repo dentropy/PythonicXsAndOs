@@ -55,6 +55,3 @@ class GameEngine(object):
             return("GAME OVER")#should I return False
         self.check_cats()
         self.check_winner()
-#game = GameEngine()
-#game.test_Board()
-#game.test_GameEngine()

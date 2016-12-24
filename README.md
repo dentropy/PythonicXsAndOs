@@ -2,6 +2,13 @@
 This is a simulation of the game X's and O's on the command line, programed in python
 Currently this program only allows two people too play X's and O's
 
+The game works today and you can play it by cloning this code
+
+To run the game run the code bellow
+
+\t\t    python Play.py
+
+
 Next Steps:
 
 1. Tests Tests Tests
