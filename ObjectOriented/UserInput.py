@@ -19,12 +19,18 @@ class UserInput(GameEngine):
                 user_input = user_input.lower()
                 user_input = user_input.split(" ")
                 if(len(user_input) == 2):
-                    test_user_input = True
+                    count = 0
+                    for i in ["middle","left","right","top","bottom"]:
+                        if i == user_input[0]:
+                            count += 1
+                    for i in ["middle","left","right","top","bottom"]:
+                        if i == user_input[1]:
+                            count += 1
+                    if count == 2:
+                        test_user_input = True
             collum = "null"
             row = "null"
-            if len(user_input) != 2:
-                print("Use only one space in your answer")
-            elif user_input[0] == "middle" or user_input[1] == "middle":
+            if user_input[0] == "middle" or user_input[1] == "middle":
                     collum = 1
                     row = 1
             if user_input[0] == "top" or user_input[1] == "top":
@@ -46,6 +52,11 @@ class UserInput(GameEngine):
             if (self.state == "play"):
                 place = self.get_user_input()
                 self.do_turn(place[0], place[1])
+        print("The game has completed")
+        if (self.state == "cats"):
+            print("sorry cat's game")
+        else:
+            print(self.state)
     def test_UserInput(self):
         print("Testing GameEngine")
         #print(self.board)

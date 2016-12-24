@@ -56,5 +56,5 @@ class GameEngine(Board):
         print("self.turn = " + self.turn)
         self.decide_who_goes_first()
         print("self.turn = " + self.turn)
-#game = GameEngine()
-#game.test_GameEngine()
+game = GameEngine()
+game.test_GameEngine()
