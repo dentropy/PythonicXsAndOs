@@ -7,3 +7,4 @@ I need a board class/object for all the other classes to change and modify
 I want to learn how to put all the other classes in different files
 wrong spelling causes an ERROR
   midle right
+CATS GAME DOES NOT WORK

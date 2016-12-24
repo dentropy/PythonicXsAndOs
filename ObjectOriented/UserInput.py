@@ -15,7 +15,7 @@ class UserInput(GameEngine):
             test_user_input = False
             while (test_user_input == False):
                 print("Give a command dude")
-                user_input =input("Where do you want to go:")
+                user_input =input("Where do you want to go: ")
                 user_input = user_input.lower()
                 user_input = user_input.split(" ")
                 if(len(user_input) == 2):
@@ -49,13 +49,14 @@ class UserInput(GameEngine):
                     print("incorrect placement")
     def cycle_through_turns(self):
         while (self.state == "play"):
-            if (self.state == "play"):
-                place = self.get_user_input()
-                self.do_turn(place[0], place[1])
+            place = self.get_user_input()
+            self.do_turn(place[0], place[1])
         print("The game has completed")
         if (self.state == "cats"):
+            self.print_board()
             print("sorry cat's game")
         else:
+            self.print_board()
             print(self.state)
     def test_UserInput(self):
         print("Testing GameEngine")
@@ -65,5 +66,5 @@ class UserInput(GameEngine):
         self.game_setup()
         #print(self.get_user_input())
         self.cycle_through_turns()
-game = UserInput()
-game.test_UserInput()
+#game = UserInput()
+#game.test_UserInput()
