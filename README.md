@@ -1,6 +1,6 @@
 #PythonicXsAndOs
-This is a simulation of of game X's and O's on the command line, programed in python
-Currently this program only alows two people too play X's and O's
+This is a simulation of the game X's and O's on the command line, programed in python
+Currently this program only allows two people too play X's and O's
 
 Next Steps:
 1. Use Classes
@@ -13,3 +13,8 @@ Next Steps:
 How the placement works
 [0,0] [0,1]
 [1,0] [1,1]
+
+
+Issues:
+  top bottom returns an error
+  one should be able to type in anything they want and get a proper error

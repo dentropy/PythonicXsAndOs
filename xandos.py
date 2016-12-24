@@ -93,22 +93,6 @@ def cycle_through_turns(board, player):
             player = "O"
         else:
             player = "X"
-def input_test_one(placement):
-    if len(placement) == 2:
-        return True
-def input_test_two(placement):
-    for i in range(len(placement)):
-        try:
-            val = int(placement[i])
-        except ValueError:
-            return False
-        placement[i] =int(placement[i])
-    return placement
-def input_test_three(placement):
-    for i in placement:
-        if i < 0 or i > 2:
-            return False
-    return placement
 def play_game():
     print("You are playing X's and O's")
     print("This is the board, E repersents an empty space")
