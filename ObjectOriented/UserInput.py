@@ -1,6 +1,16 @@
 from GameEngine import GameEngine
 class UserInput(GameEngine):
+    def game_setup(self):
+        input("choose who gets to go first then press enter: ")
+        self.turn = self.decide_who_goes_first()
+        #print(self.turn)
     def get_user_input(self):
+        #what this does is check take raw sting and convert it to a spot on the board
+        #whis also checks if the spots on the board is available therefore only
+        #returns a valid location someone can put their piece aka not 'E'
+        #THIS NEEDS TO BE FIXED TO FIX THE ERROR
+        self.print_board()
+        print("it is " + self.turn + "'s turn")
         while True:
             test_user_input = False
             while (test_user_input == False):
@@ -26,16 +36,23 @@ class UserInput(GameEngine):
             elif user_input[0] == "right" or user_input[1] == "right":
                 row = 2
             if type(collum) == int or type(row) == int:
-                if board[collum][row] == "E":
+                if self.board[collum][row] == "E":
                     return [collum, row]
                     break
                 else:
                     print("incorrect placement")
-    def cycle_through_turns(self, board, player):
-        while check_winner(board)== False and board_full(board) == False:
-            player_turn(board, player)
-            print_out_board(board)
-            if player == "X":
-                player = "O"
-            else:
-                player = "X"
+    def cycle_through_turns(self):
+        while (self.state == "play"):
+            if (self.state == "play"):
+                place = self.get_user_input()
+                self.do_turn(place[0], place[1])
+    def test_UserInput(self):
+        print("Testing GameEngine")
+        #print(self.board)
+        #print(self.turn)
+        #self.print_board()
+        self.game_setup()
+        #print(self.get_user_input())
+        self.cycle_through_turns()
+game = UserInput()
+game.test_UserInput()
