@@ -10,23 +10,23 @@ def draw_out_board():
     return board
 def print_out_board(board):
     for i in board:
-        print i
+        print(i)
 def decide_who_goes_first():
     import random
     if random.randrange(2) == 0:
-        print "O gets to go first"
+        print("O gets to go first")
         return "O"
     else:
-        print "X gets to go first"
+        print("X gets to go first")
         return "X"
 def player_turn(board, player):
     if player =="O":
         otherPlayer = "X"
     else:
         otherPlayer = "O"
-    print "It is ", player + "'s turn"
+    print("It is ", player + "'s turn")
     placement = get_user_input(board)
-    print placement
+    print(placement)
     for i in range(len(placement)):#start here I need to convert int to string
         placement[i] = int(placement[i])
     if board[placement[0]][placement[1]] == "E":
@@ -34,16 +34,16 @@ def player_turn(board, player):
     return board
 def get_user_input(board):
     while True:
-        user_input =raw_input("Where do you want to go:")
+        user_input =input("Where do you want to go:")
         while (user_input == ""):
-            print "Give a command dude"
-            user_input =raw_input("Where do you want to go:")
+            print("Give a command dude")
+            user_input =input("Where do you want to go:")
         user_input = user_input.lower()
         user_input = user_input.split(" ")
         collum = "null"
         row = "null"
         if len(user_input) != 2:
-            print "Use only one space in your answer"
+            print("Use only one space in your answer")
         elif user_input[0] == "middle" or user_input[1] == "middle":
                 collum = 1
                 row = 1
@@ -60,7 +60,7 @@ def get_user_input(board):
                 return [collum, row]
                 break
             else:
-                print "incorrect placement"
+                print("incorrect placement")
 def board_full(board):
     for i in board:
         for j in i:
@@ -71,16 +71,16 @@ def check_winner(board):
     for i in ["X","O"]:
         for num in range(3):
             if i == board[num][0] and i ==  board[num][1] and i == board[num][2]:
-                print i, "WINS"
+                print(i, "WINS")
                 return True
             elif i == board[0][num] and i ==  board[1][num] and i == board[2][num]:
-                print i, "WINS"
+                print(i, "WINS")
                 return True
             elif i == board[0][0] and i ==  board[1][1] and i == board[2][2]:
-                print i, "WINS"
+                print(i, "WINS")
                 return True
             elif i == board[0][2] and i ==  board[1][1] and i == board[2][0]:
-                print i, "WINS"
+                print(i, "WINS")
                 return True
     return False
 def cycle_through_turns(board, player):
@@ -108,12 +108,12 @@ def input_test_three(placement):
             return False
     return placement
 def play_game():
-    print "You are playing X's and O's"
-    print "This is the board, E repersents an empty space"
+    print("You are playing X's and O's")
+    print("This is the board, E repersents an empty space")
     board = draw_out_board()
     print_out_board(board)
-    print "use the words top, bottom, left, right, and middle to place you piece"
-    raw_input("choose who gets to go first then press enter: ")
+    print("use the words top, bottom, left, right, and middle to place you piece")
+    input("choose who gets to go first then press enter: ")
     firstPlayer = decide_who_goes_first()
     cycle_through_turns(board, firstPlayer)
 play_game()
