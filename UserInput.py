@@ -23,6 +23,8 @@ class UserInput(GameEngine):
                     f = open('XsandOsSave001.json', 'w')
                     f.write(json.dumps(self.moves))
                     f.close()
+                if (user_input[0] == "undo"):
+                    self.undo()
                 if(len(user_input) == 2):
                     count = 0
                     for i in ["middle","left","right","top","bottom"]:

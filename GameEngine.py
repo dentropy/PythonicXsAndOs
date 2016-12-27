@@ -58,3 +58,11 @@ class GameEngine(object):
             return(False)
         self.check_cats()
         self.check_winner()
+    def undo(self):
+        if(self.moves != []):
+            move = self.moves[len(self.moves) - 1]
+            #print(move)
+            self.turn = move[0]
+            self.board[move[1]][move[2]] = "E"
+            self.print_board()
+            self.moves.pop()
