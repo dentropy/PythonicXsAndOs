@@ -80,3 +80,8 @@ class GameEngine(object):
             self.print_board()
             self.moves.append(self.future_moves.pop(0))
             self.turn_number += 1
+    def save_game(self, name):
+        import json
+        f = open(name + '.json', 'w')
+        f.write(json.dumps(self.moves))
+        f.close()

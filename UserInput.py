@@ -3,7 +3,6 @@ class UserInput(GameEngine):
     def game_setup(self):
         input("choose who gets to go first then press enter: ")
         self.turn = self.decide_who_goes_first()
-        #print(self.turn)
     def get_user_input(self):
         #what this does is check take raw sting and convert it to a spot on the board
         #whis also checks if the spots on the board is available therefore only
@@ -19,10 +18,7 @@ class UserInput(GameEngine):
                 user_input = user_input.lower()
                 user_input = user_input.split(" ")
                 if (user_input[0] == "log"):
-                    import json
-                    f = open('XsandOsSave001.json', 'w')
-                    f.write(json.dumps(self.moves))
-                    f.close()
+                    self.save_game()
                 if (user_input[0] == "undo"):
                     self.undo()
                 if (user_input[0] == "redo"):
@@ -67,7 +63,6 @@ class UserInput(GameEngine):
         else:
             self.print_board()
             print(self.state)
-    def test_UserInput(self):
-        print("Testing GameEngine")
-        self.game_setup()
-        self.cycle_through_turns()
+        print("If you would like to save this game type 'yes'")
+        if (input("type yes: ").lower() == "yes"):
+            self.save_game(input("Type name of file here: "))
