@@ -8,7 +8,8 @@ class GameEngine(object):
         self.state = "unknown"
         #store the moves of the game in a list
         self.moves = []
-
+        #store the moves that were undone
+        self.future_moves = []
     def print_board (self):
         for i in self.board:
             print(i)
@@ -61,8 +62,17 @@ class GameEngine(object):
     def undo(self):
         if(self.moves != []):
             move = self.moves[len(self.moves) - 1]
-            #print(move)
             self.turn = move[0]
             self.board[move[1]][move[2]] = "E"
             self.print_board()
-            self.moves.pop()
+            self.future_moves.append(self.moves.pop())
+    def redo(self):
+        if(self.future_moves != []):
+            move = self.future_moves[0]
+            if move[0] == "X":
+                self.turn = "O"
+            else:
+                self.turn = "X"
+            self.board[move[1]][move[2]] = move[0]
+            self.print_board()
+            self.moves.append(self.future_moves.pop(0))

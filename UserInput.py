@@ -25,6 +25,8 @@ class UserInput(GameEngine):
                     f.close()
                 if (user_input[0] == "undo"):
                     self.undo()
+                if (user_input[0] == "redo"):
+                    self.redo()
                 if(len(user_input) == 2):
                     count = 0
                     for i in ["middle","left","right","top","bottom"]:
