@@ -1,7 +1,25 @@
 from GameEngine import GameEngine
 class UserInput(GameEngine):
     def game_setup(self):
-        input("choose who gets to go first then press enter: ")
+        print("if you would like to import a save game type 'import' below'")
+        if (input("choose who gets to go first then press enter: ") =="import"):
+            while (True):
+                print("type 'play' if you just want to play")
+                file_name = input("imput the name of the file here: ")
+                if (file_name == "play"):
+                    break
+                import json
+                import os.path
+                if(os.path.exists(file_name + '.json')):
+                    f = open(file_name + '.json', 'r')
+                    self.future_moves = json.loads(f.read())
+                    f.close()
+                    for i in range(len(self.future_moves)):
+                        self.redo()
+                        print(i)
+                    break
+                else:
+                    print("File does not seem to exist please try again")
         self.turn = self.decide_who_goes_first()
     def get_user_input(self):
         #what this does is check take raw sting and convert it to a spot on the board
@@ -18,7 +36,7 @@ class UserInput(GameEngine):
                 user_input = user_input.lower()
                 user_input = user_input.split(" ")
                 if (user_input[0] == "log"):
-                    self.save_game()
+                    self.save_game(input("What do you want to call your save: "))
                 if (user_input[0] == "undo"):
                     self.undo()
                 if (user_input[0] == "redo"):
