@@ -6,6 +6,9 @@ class GameEngine(object):
         self.turn = "unknown"
         #the stste variable records state of game "win", "cats", or "play"
         self.state = "unknown"
+        #store the moves of the game in a list
+        self.moves = []
+
     def print_board (self):
         for i in self.board:
             print(i)
@@ -39,11 +42,14 @@ class GameEngine(object):
                     count += 1
         if (count == 0):
             self.state = "cats"
-    def do_turn(self, yPos, xPos):
+    def do_turn(self, ypos, xpos):
         #remember down then accrsoss to navigate the board
         if (self.state == "play"):
-            if self.board[yPos][xPos] == "E":
-                self.board[yPos][xPos] = self.turn
+            if self.board[ypos][xpos] == "E":
+                self.board[ypos][xpos] = self.turn
+                self.moves.append([self.turn, ypos, xpos])
+            else:
+                return "invalid move"
             if self.turn == "X":
                 self.turn = "O"
             else:

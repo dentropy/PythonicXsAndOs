@@ -18,6 +18,11 @@ class UserInput(GameEngine):
                 user_input =input("Where do you want to go: ")
                 user_input = user_input.lower()
                 user_input = user_input.split(" ")
+                if (user_input[0] == "log"):
+                    import json
+                    f = open('XsandOsSave001.json', 'w')
+                    f.write(json.dumps(self.moves))
+                    f.close()
                 if(len(user_input) == 2):
                     count = 0
                     for i in ["middle","left","right","top","bottom"]:
