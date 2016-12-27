@@ -10,7 +10,7 @@ class UserInput(GameEngine):
         #returns a valid location someone can put their piece aka not 'E'
         #THIS NEEDS TO BE FIXED TO FIX THE ERROR
         self.print_board()
-        print("it is " + self.turn + "'s turn")
+        print("it is " + self.turn + "'s turn and turn number " + str(self.turn_number))
         while True:
             test_user_input = False
             while (test_user_input == False):

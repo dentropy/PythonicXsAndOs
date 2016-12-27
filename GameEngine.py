@@ -10,6 +10,7 @@ class GameEngine(object):
         self.moves = []
         #store the moves that were undone
         self.future_moves = []
+        self.turn_number = 1
     def print_board (self):
         for i in self.board:
             print(i)
@@ -49,6 +50,7 @@ class GameEngine(object):
             if self.board[ypos][xpos] == "E":
                 self.board[ypos][xpos] = self.turn
                 self.moves.append([self.turn, ypos, xpos])
+                self.turn_number += 1
             else:
                 return "invalid move"
             if self.turn == "X":
@@ -66,6 +68,7 @@ class GameEngine(object):
             self.board[move[1]][move[2]] = "E"
             self.print_board()
             self.future_moves.append(self.moves.pop())
+            self.turn_number -= 1
     def redo(self):
         if(self.future_moves != []):
             move = self.future_moves[0]
@@ -76,3 +79,4 @@ class GameEngine(object):
             self.board[move[1]][move[2]] = move[0]
             self.print_board()
             self.moves.append(self.future_moves.pop(0))
+            self.turn_number += 1
