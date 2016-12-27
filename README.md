@@ -8,20 +8,17 @@ To run the game run the code bellow
 python Play.py
 
 Plan:
-- Modify the game engine to be able to undo, redo move export, and import games 
+- document
+- find bugs
+
+
 Next Steps:
-- Store each placement for the ability to undo a placement
-    I can make a list and store the order of the moves with the person that did them
-- export saved games using JSON
-    Store that list as JSON
-- replay saved games
-    Have commands to open up JSON files with game saves
-- CPU Mode aka neural network
+- CPU Mode and or neural network
     No clue how to do this currently
     google tensorflow tutorials
 - Have multiplayer over a network with lobbies
   do this first on command line
-- build a web GUI
+- build a web GUI or web app
   have multiplayer and stuff but with a server and a website
 - Use Graphics library and render this using images
     Not a fan of python graphics libraries aka need to do more research
